@@ -11,7 +11,12 @@ namespace AzureMicroservicesSample.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private OrderRepository _orderRepository;
+        private readonly OrderRepository _orderRepository;
+
+        public HomeController(OrderRepository orderRepository)
+        {
+            _orderRepository = orderRepository;
+        }
 
         public ActionResult Index()
         {

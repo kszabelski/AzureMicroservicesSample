@@ -7,8 +7,14 @@ namespace AzureMicroservicesSample.Web.Controllers
 {
     public class OrdersController : Controller
     {
-        private OrderRepository _orderRepository;
-        private OrderService _orderService;
+        private readonly OrderRepository _orderRepository;
+        private readonly OrderService _orderService;
+
+        public OrdersController(OrderService orderService, OrderRepository orderRepository)
+        {
+            _orderService = orderService;
+            _orderRepository = orderRepository;
+        }
 
         public ActionResult NewOrder()
         {
