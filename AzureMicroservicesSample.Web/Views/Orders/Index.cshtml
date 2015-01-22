@@ -1,0 +1,38 @@
+﻿@using AzureMicroservicesSample.Web.Models
+@model AzureMicroservicesSample.Web.Models.Order
+
+<h2>Order</h2>
+<p>Id: @Model.Id</p>
+
+<p>Items:</p>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Amount</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Beer</td><td>@Model.BeerAmount</td></tr>
+        <tr><td>Wine</td><td>@Model.WineAmount</td></tr>
+        <tr><td>Vodka</td><td>@Model.VodkaAmout</td></tr>
+
+        <tr>
+            <td></td><td>Total incl discount:</td><td>@Model.TotalPriceIncludingDiscout</td>
+        </tr>
+    </tbody>
+</table>
+
+@if (Model.IsConfirmed)
+{
+    <p>Order confirmed</p>
+}
+else
+{
+    using (Html.BeginForm("ConfirmOrder", "Orders"))
+    {
+         <input type="hidden" id="orderId" name="orderId" value="@Model.Id"/>
+         <input type="submit" value="Confirm order"/>
+    }
+}

@@ -1,0 +1,30 @@
+﻿@model AzureMicroservicesSample.Web.Models.Order
+
+<h2>
+    Create new order
+</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Amount</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Beer</td><td>@Html.TextBoxFor(m => m.BeerAmount)</td></tr>
+            <tr><td>Wine</td><td>@Html.TextBoxFor(m => m.WineAmount)</td></tr>
+            <tr><td>Vodka</td><td>@Html.TextBoxFor(m => m.VodkaAmout)</td></tr>
+            
+            <tr>
+                <td></td>
+                <td>Total incl discount:</td>
+                <td>@Model.TotalPriceIncludingDiscout</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="Save"/>
+}  
