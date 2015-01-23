@@ -36,6 +36,32 @@
     <ServiceConfiguration Include="ServiceConfiguration.Local.cscfg" />
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AzureMicroservicesSample.OrderService\AzureMicroservicesSample.OrderService.csproj">
+      <Name>AzureMicroservicesSample.OrderService</Name>
+      <Project>{66010d74-9369-4545-98d4-eeb6d0cd0108}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>AzureMicroservicesSample.OrderService</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="..\AzureMicroservicesSample.Web\AzureMicroservicesSample.Web.csproj">
+      <Name>AzureMicroservicesSample.Web</Name>
+      <Project>{906cae47-bf5f-459a-800b-ade506eb918e}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>AzureMicroservicesSample.Web</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AzureMicroservicesSample.OrderServiceContent\" />
+    <Folder Include="AzureMicroservicesSample.WebContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DiagnosticsConfiguration Include="AzureMicroservicesSample.OrderServiceContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="AzureMicroservicesSample.WebContent\diagnostics.wadcfgx" />
+  </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
