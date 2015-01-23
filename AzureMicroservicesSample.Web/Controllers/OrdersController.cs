@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using AzureMicroservicesSample.OrderService.Entities;
 using AzureMicroservicesSample.Web.Models;
 using AzureMicroservicesSample.Web.Services;
 
@@ -8,9 +10,9 @@ namespace AzureMicroservicesSample.Web.Controllers
     public class OrdersController : Controller
     {
         private readonly OrderRepository _orderRepository;
-        private readonly OrderService _orderService;
+        private readonly OrderServiceGateway _orderService;
 
-        public OrdersController(OrderService orderService, OrderRepository orderRepository)
+        public OrdersController(OrderServiceGateway orderService, OrderRepository orderRepository)
         {
             _orderService = orderService;
             _orderRepository = orderRepository;
@@ -24,7 +26,7 @@ namespace AzureMicroservicesSample.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewOrder(Order viewModel)
+        public async Task<ActionResult> NewOrder(Order viewModel)
         {
             _orderService.CreateNewOrder(viewModel);
 

@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A9751B
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMicroservicesSample.OrderService", "AzureMicroservicesSample.OrderService\AzureMicroservicesSample.OrderService.csproj", "{66010D74-9369-4545-98D4-EEB6D0CD0108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureMicroservicesSample.OrderService.Entities", "AzureMicroservicesSample.OrderService.Entities\AzureMicroservicesSample.OrderService.Entities.csproj", "{E2764F48-2DA0-4B5A-B9A0-70A34601CF1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +26,14 @@ Global
 		{906CAE47-BF5F-459A-800B-ADE506EB918E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{906CAE47-BF5F-459A-800B-ADE506EB918E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{906CAE47-BF5F-459A-800B-ADE506EB918E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66010D74-9369-4545-98D4-EEB6D0CD0108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66010D74-9369-4545-98D4-EEB6D0CD0108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66010D74-9369-4545-98D4-EEB6D0CD0108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66010D74-9369-4545-98D4-EEB6D0CD0108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2764F48-2DA0-4B5A-B9A0-70A34601CF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2764F48-2DA0-4B5A-B9A0-70A34601CF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2764F48-2DA0-4B5A-B9A0-70A34601CF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2764F48-2DA0-4B5A-B9A0-70A34601CF1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

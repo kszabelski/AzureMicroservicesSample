@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using AzureMicroservicesSample.Web.Controllers;
 
-namespace AzureMicroservicesSample.Web.Models
+namespace AzureMicroservicesSample.OrderService.Entities
 {
     public class Order
     {

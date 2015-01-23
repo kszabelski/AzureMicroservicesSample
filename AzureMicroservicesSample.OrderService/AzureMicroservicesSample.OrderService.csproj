@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ConfirmController.cs" />
+    <Compile Include="Controllers\CreateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -95,8 +97,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AzureMicroservicesSample.OrderService.Entities\AzureMicroservicesSample.OrderService.Entities.csproj">
+      <Project>{E2764F48-2DA0-4B5A-B9A0-70A34601CF1E}</Project>
+      <Name>AzureMicroservicesSample.OrderService.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

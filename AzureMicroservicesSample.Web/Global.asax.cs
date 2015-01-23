@@ -30,7 +30,7 @@ namespace AzureMicroservicesSample.Web
         {
             var containerBuilder = new ContainerBuilder();
 
-            containerBuilder.RegisterType<OrderService>().AsSelf();
+            containerBuilder.RegisterType<OrderServiceGateway>().AsSelf();
             containerBuilder.RegisterType<OrderRepository>().AsSelf();
             containerBuilder.RegisterAssemblyTypes(typeof(HomeController).Assembly)
                 .Where(t => t.Name.EndsWith("Controller"));

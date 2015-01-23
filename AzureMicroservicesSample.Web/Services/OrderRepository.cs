@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AzureMicroservicesSample.OrderService.Entities;
 using AzureMicroservicesSample.Web.Models;
 
 namespace AzureMicroservicesSample.Web.Services
