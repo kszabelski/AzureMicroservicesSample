@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Web;
 using AzureMicroservicesSample.OrderService.Entities;
 using Newtonsoft.Json;
 
@@ -10,6 +11,14 @@ namespace AzureMicroservicesSample.Web.Services
 {
     public class OrderServiceGateway
     {
+        private readonly HttpRequestBase _request;
+        private string _baseUrl;
+
+        public OrderServiceGateway(HttpRequestBase request)
+        {
+            _baseUrl = "http://" + request.Url.Host + ":63477/";
+        }
+
         public void ConfirmOrder(Guid orderId)
         {
             PostJson("confirm", orderId);
@@ -20,11 +29,12 @@ namespace AzureMicroservicesSample.Web.Services
             PostJson("create", order);
         }
 
-        private static void PostJson(string requestUri, object obj)
+        private void PostJson(string requestUri, object obj)
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:63477/");
+
+                client.BaseAddress = new Uri(_baseUrl);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
