@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using AzureMicroservicesSample.OrderService.Entities;
-using AzureMicroservicesSample.Web.Models;
 
 namespace AzureMicroservicesSample.Web.Services
 {
@@ -10,19 +9,18 @@ namespace AzureMicroservicesSample.Web.Services
     {
         public Order GetOrder(Guid id)
         {
-            return new Order
+            using (var context = new OrdersContext())
             {
-                Id = id,
-                BeerAmount = 1,
-                VodkaAmout = 2,
-                WineAmount = 5,
-                TotalPriceIncludingDiscout = 999.99M
-            };
+                return context.Orders.Single(o => o.Id == id);
+            }
         }
 
         public IList<Order> GetAll()
         {
-            return new List<Order> {new Order {Id = Guid.NewGuid()}, new Order {Id = Guid.NewGuid()}};
+            using (var context = new OrdersContext())
+            {
+                return context.Orders.ToList();
+            }
         }
     }
 }
