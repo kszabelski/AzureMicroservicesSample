@@ -11,7 +11,6 @@ namespace AzureMicroservicesSample.Web.Services
 {
     public class OrderServiceGateway
     {
-        private readonly HttpRequestBase _request;
         private string _baseUrl;
 
         public OrderServiceGateway(HttpRequestBase request)

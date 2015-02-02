@@ -26,7 +26,7 @@ namespace AzureMicroservicesSample.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> NewOrder(Order viewModel)
+        public ActionResult NewOrder(Order viewModel)
         {
             _orderService.CreateNewOrder(viewModel);
 
